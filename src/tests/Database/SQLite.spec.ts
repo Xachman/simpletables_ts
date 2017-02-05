@@ -1,9 +1,9 @@
 /* tslint:disable:no-unused-variable */
 
-import { SQLite } from './SQLite';
+import { SQLite } from '../../app/Database/SQLite';
 
 describe('SQLite', () => {
-	var db;
+  var db;
   beforeEach(() => {
 		db = new SQLite();
 		db.open();
@@ -42,11 +42,14 @@ describe('SQLite', () => {
 		var result = db.exec("SELECT * FROM test");
 		var testResult = [];
 		var values = result[0].values;
-	console.log(values);	
+		console.log(values);	
 		for(var i = 0; i < values.length; i++) {
 			var value = values[i];
 			
-			testResult.push(value[2]);
+			for(var x = 0; x < value.length; x++) {
+				testResult.push(value[x]);
+
+			}	
 		}
 		
 
