@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { SQLite } from './Database/SQLite';
+import { FileUtil } from './Util/File';
+
 
 @Component({
   selector: 'app-root',
@@ -17,12 +19,18 @@ export class AppComponent {
 			db.run("CREATE Table Test (a INT, b CHAR);");
 			db.prepareExecute("INSERT INTO Test VALUES (?,?)", [1, "test"]);
 			db.prepareExecute("INSERT INTO Test VALUES (?,?)", [12, 1]);
+			db.prepareExecute("INSERT INTO Test VALUES (?,?)", [12, 1]);
+			db.prepareExecute("INSERT INTO Test VALUES (?,?)", [12, 1]);
+			db.prepareExecute("INSERT INTO Test VALUES (?,?)", [12, 1]);
+			db.prepareExecute("INSERT INTO Test VALUES (?,?)", [12, 1]);
 			var stmt = db.prepare("SELECT * FROM Test WHERE a=$test");
 			stmt.bind({$test:12});
 			while(stmt.step()) {
 				var row = stmt.getAsObject();
 				console.log(row);
 			}
+
+			FileUtil.saveUintArray(db.export(), 'test.db');
 		} catch(e) {
 			console.log(e);
 		}

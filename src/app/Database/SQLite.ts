@@ -24,8 +24,9 @@ export class SQLite {
 	prepareExecute(sql: string, items: Array<any>) {
 		this.db.run(sql,items)
 	}
-
-	
+	export() : Uint8Array {
+		return this.db.export();
+	}	
 	
 }
 
