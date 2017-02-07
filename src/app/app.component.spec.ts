@@ -25,10 +25,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Application Title');
   }));
 
-  it('should render title in a h1 tag', async(() => {
+  it('should render title in a .navbar-brand tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Application Title');
+    expect(compiled.querySelector('.navbar-brand').textContent).toContain('Application Title');
   }));
 });
