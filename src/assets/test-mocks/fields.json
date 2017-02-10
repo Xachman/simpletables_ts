@@ -1,0 +1,26 @@
+[
+	{
+		"type": "int",
+		"field_html": "<div class=\"{{field.class}}\"><label>{{field.tile}}</label><input class=\"{{field.inputClass}}\" type=\"number\"/></div>"
+	},
+	{
+		"type": "char",
+		"field_html": "<div class=\"{{field.class}}\"><label>{{field.tile}}</label><input class=\"{{field.inputClass}}\" type=\"text\"/></div>"
+	},
+	{
+		"type": "varchar",
+		"field_html": "<div class=\"{{field.class}}\"><label>{{field.tile}}</label><input class=\"{{field.inputClass}}\" type=\"text\"/></div>"
+	},
+	{
+		"type": "date",
+		"field_html": "<div class=\"{{field.class}}\"><label>{{field.tile}}</label><input class=\"{{field.inputClass}}\" type=\"date\"/></div>"
+	},
+	{
+		"type": "time",
+		"field_html": "<div class=\"{{field.class}}\"><label>{{field.tile}}</label><input class=\"{{field.inputClass}}\" type=\"time\"/></div>"
+	},
+	{
+		"type": "datetime",
+		"field_html": "<div class=\"{{field.class}}\"><label>{{field.tile}}</label><input class=\"{{field.inputClass}}\" type=\"datetime\"/></div>"
+	}
+]
