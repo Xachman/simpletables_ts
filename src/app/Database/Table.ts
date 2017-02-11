@@ -1,4 +1,6 @@
-abstract class Table {
+import { Column } from "./Column";
+
+export abstract class Table {
 	constructor() {
 	}
 
