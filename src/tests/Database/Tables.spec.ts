@@ -21,13 +21,11 @@ describe('Tables', () => {
 			console.log(results[i].values);
 		}
 	});
-  it('Test generateField is correct', ()  => {
-			
+  it('Test getTablesFromDatabase is correct', ()  => {
+		var tables = new Tables(db);
+	
+
+		expect(false).toEqual(true);	
   });
-
-	it('Test genreateField throw error', () => {
-
-
-	});
 
 });
