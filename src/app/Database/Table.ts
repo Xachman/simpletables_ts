@@ -1,28 +1,27 @@
-import { Column } from "./Column";
+import { ATable } from './ATable';
+import { Column } from './Column';
 
-export abstract class Table {
-	constructor() {
+export class Table extends ATable {
+	private mColumns: Array<Column>;
+	private mAutoincrement: boolean;
+	private mTableName: string;
+	constructor(columns: Array<Column>, autoincrement: boolean, tableName: string) {
+		super();
+		this.mColumns = columns;
+		this.mAutoincrement = autoincrement;
+		this.mTableName = tableName;
 	}
 
-	createTableSql() {
-		var sql = "CREATE TABLE IF NO EXISTS "+this.tableName()+" (";
-
-		if(this.autoincrement()) {
-			sql+= "id INTEGER PRIMARY KEY AUTOINCREMENT,";
-		}
-		var columns = this.getColumns();
-		for(var i = 0; i < columns.length; i++) {
-			var col = columns[i];
-			console.log(col);
-			sql += col.getName()+" "+col.getType();
-			if((i+1) < columns.length) {
-				sql+=",";
-			}
-		}
-		
-		return sql+")";
+	getColumns() : Array<Column> {
+		return this.mColumns;
 	}
-	abstract tableName(): string;
-	abstract getColumns(): Array<Column>;
-	abstract autoincrement(): boolean;
+
+	autoincrement(): boolean {
+	 return this.mAutoincrement;	
+	}
+
+	tableName(): string {
+		return this.mTableName;
+	}
+
 }
