@@ -23,7 +23,13 @@ describe('Tables', () => {
 	});
   it('Test getTablesFromDatabase is correct', ()  => {
 		var tables = new Tables(db);
-	
+		var tableArray = tables.getTables();
+
+		for(var i = 0; i < tableArray.length; i++) {
+			var table = tableArray[i];
+
+			console.log(table.tableName());
+		}	
 
 		expect(false).toEqual(true);	
   });

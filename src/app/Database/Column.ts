@@ -1,7 +1,7 @@
 export class Column {
 	type: string;
 	name: string;
-	private types = ["int", "char", "varchar", "text", "datetime", "time", "date"];
+	private types = ["int","integer", "char", "varchar", "text", "datetime", "time", "date"];
 
 	constructor(name: string, type: string) {
 		this.type = this.processType(type);

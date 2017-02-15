@@ -12,7 +12,7 @@ export class SQLite {
 		this.db = new sqljs.Database();
 	}
 
-	exec(sql:string):string {
+	exec(sql:string): Array<Result> {
 		return this.db.exec(sql);
 	}
 	run(sql:string) {
@@ -50,3 +50,8 @@ export class SQLiteStmt {
 	}
 }
 
+
+interface Result {
+	columns: Array<string>;
+	values: Array<string>
+}
