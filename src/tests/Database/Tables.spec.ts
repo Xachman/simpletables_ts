@@ -1,6 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { Tables }  from '../../app/Database/Tables';
+import { Table }  from '../../app/Database/Table';
 import { Column }  from '../../app/Database/Column';
 import { SQLite }  from '../../app/Database/SQLite';
 
@@ -25,13 +26,32 @@ describe('Tables', () => {
 		var tables = new Tables(db);
 		var tableArray = tables.getTables();
 
+		var table1Col = Array<Column>();
+		var table2Col = Array<Column>();
+		
+	    table1Col.push(new Column("id", "integer"));
+	    table1Col.push(new Column("col_1", "text"));
+	    table1Col.push(new Column("col_2", "char"));
+	    table1Col.push(new Column("col_3", "date"));
+	    
+	    	
+	    table2Col.push(new Column("col_1", "text"));
+	    table2Col.push(new Column("col_2", "char"));
+	    table2Col.push(new Column("col_3", "date"));
+	    
+        var testTables = [
+                new Table(table1Col, true, "test"),
+                new Table(table2Col, false, "test2")
+            ];
+        
+        
 		for(var i = 0; i < tableArray.length; i++) {
 			var table = tableArray[i];
 
 			console.log(table.tableName());
 		}	
-
-		expect(false).toEqual(true);	
+        
+		expect(tableArray).toEqual(testTables);	
   });
 
 });
