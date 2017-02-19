@@ -22,8 +22,9 @@ export class Tables {
 	
 		for(var i = 0; i < results[0].values.length; i++) {
 			var tableName = results[0].values[i];
+			console.log(tableName)
 			if(!this.isIgnore(tableName)) {
-				tables.push(this.assembleTable(tableName));
+				tables.push(this.assembleTable(tableName[0]));
 			}
 		}	
 		
