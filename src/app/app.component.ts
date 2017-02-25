@@ -13,6 +13,7 @@ export class AppComponent {
 	message = "Please add database";
 	menu = new Menu();
 	constructor() {
+		this.menu.addMenuItem(new MenuItem());
 	}
 	getDatabase() {
 		console.log("get the database");

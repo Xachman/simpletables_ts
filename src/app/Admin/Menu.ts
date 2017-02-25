@@ -8,6 +8,9 @@ export class Menu {
 		
 	}	
 
+	addMenuItem(menuItem: MenuItem) {
+		this.menu.push(MenuItem);
+	}	
 	getName(key) {
 
 	}
