@@ -19,14 +19,16 @@ export class Tables {
 	getTablesFromDatabase(): Array<Table> {
 		var results = this.db.exec("SELECT name FROM sqlite_master;");
 		var tables = Array<Table>();
-	
-		for(var i = 0; i < results[0].values.length; i++) {
-			var tableName = results[0].values[i];
-			console.log(tableName)
-			if(!this.isIgnore(tableName)) {
-				tables.push(this.assembleTable(tableName[0]));
-			}
-		}	
+		console.log(results);	
+		if(results.length > 0) {
+			for(var i = 0; i < results[0].values.length; i++) {
+				var tableName = results[0].values[i];
+				console.log(tableName)
+				if(!this.isIgnore(tableName)) {
+					tables.push(this.assembleTable(tableName[0]));
+				}
+			}	
+		}
 		
 		return tables;
 	}
