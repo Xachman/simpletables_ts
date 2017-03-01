@@ -53,5 +53,13 @@ describe('Tables', () => {
         
 		expect(tableArray).toEqual(testTables);	
   });
+  it('Test getTablesFromDatabase not tables', () => {
+		var newDb = new SQLite();
+		newDb.open();
+		var tables = new Tables(newDb);
+	
+
+		expect(0).toEqual(tables.getTables().length);
+  })
 
 });
