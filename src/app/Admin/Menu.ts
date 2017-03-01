@@ -1,26 +1,23 @@
 export class Menu {
 	private menu = [
-		new MenuItem("Create Table","create-table",function() {
-			console.log("Create Table")
-		})
 	]
 	constructor() {
 		
 	}	
 
 	addMenuItem(menuItem: MenuItem) {
-		this.menu.push(MenuItem);
+		this.menu.push(menuItem);
 	}	
 	getName(key) {
 
 	}
 
-	getMenuItems(): Array<string> {
+	getMenuItems(): Array<MenuItem> {
 		return this.menu;
 	}
 }
 
-class MenuItem {
+export class MenuItem {
 	private name: string;
 	private htmlClass: string;
 	private callback;
