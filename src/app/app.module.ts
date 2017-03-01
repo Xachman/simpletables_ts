@@ -5,11 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { DynamicComponent } from './Components/dynamic.component';
-import {CreateComponent} from './Components/create.component';
+import {CreateTableComponent} from './Components/createTable.component';
+import {TablesComponent} from './Components/tables.component';
 
 @NgModule({
   declarations: [
-	  AppComponent, DynamicComponent, CreateComponent
+	  AppComponent, DynamicComponent, CreateTableComponent, TablesComponent
   ],
   imports: [
     BrowserModule,

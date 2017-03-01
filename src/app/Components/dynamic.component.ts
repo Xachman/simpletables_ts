@@ -1,8 +1,9 @@
 import {Component, Input, ViewContainerRef, ViewChild, ReflectiveInjector, ComponentFactoryResolver} from '@angular/core';
-import { CreateComponent } from './create.component';
+import { CreateTableComponent } from './createTable.component';
+import { TablesComponent } from './tables.component';
 @Component({
   selector: 'dynamic-component',
-  entryComponents: [CreateComponent], // Reference to the components must be here in order to dynamically create them
+  entryComponents: [CreateTableComponent, TablesComponent], // Reference to the components must be here in order to dynamically create them
   template: `
     <div #dynamicComponentContainer></div>
   `,

@@ -4,16 +4,14 @@ import {SQLite} from '../Database/SQLite';
 import {Tables} from '../Database/Tables';
 @Component({
   selector: 'create',
-  templateUrl: '../../templates/create.component.html',
-  styleUrls: ['../../assets/css/create.component.css']
+  templateUrl: '../../templates/tables.component.html',
 })
-export class CreateComponent {
+export class TablesComponent {
 	private db: SQLite;
 	private tables: Tables;
 	
 	constructor(private injector: Injector) {
 		this.db = this.injector.get('database');
-		console.log(this.db);
 		this.tables = new Tables(this.db);
 	}
 }
