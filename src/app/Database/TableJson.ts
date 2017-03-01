@@ -1,4 +1,6 @@
-class TableJson extends Table {
+import { Column } from './Column';
+import { ATable } from './ATable';
+class TableJson extends ATable {
 	columns: Array<Column>;
 	json: string;
 	data: TableData;
