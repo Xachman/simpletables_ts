@@ -7,26 +7,27 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="panel-body">
-			<form role="form">
-				<div class="form-group col-md-4">
+			<form role="form" *ngIf="currentColumn">
+				<div class="form-group col-md-4" >
 					<label>Name</label>
-					<input class="form-control" type="text">
+					<input class="form-control" [(ngModel)]="currentColumn.name" name="currentColumn.name" type="text">
 					<p class="help-block">help text here.</p>
 				</div>
 				<div class="form-group col-md-4">
 					<label>Type</label>
-					<select class="form-control">
+					<select class="form-control" [(ngModel)]="currentColumn.type" name="currentColumn.type">
 						<option *ngFor="let columnType of columnTypes">{{columnType}}</option>
 					</select>	
 					<p class="help-block">help text here.</p>
 				</div>
 				<div class="form-group col-md-4">
 					<label>Default</label>
-					<input class="form-control" type="password">
+					<input class="form-control" [(ngModel)]="currentColumn.default" name="currentColumn.default" type="text">
 					<p class="help-block">help text here.</p>
 				</div>
-					
-				<button type="submit" class="btn btn-danger">register now </button>
+				<button type="submit" class="btn btn-danger" (click)="addColumn()" >
+					Add Column
+				</button>
 					
 			</form>
 		</div>

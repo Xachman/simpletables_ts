@@ -13,12 +13,31 @@ export class CreateTableComponent {
 	private db: SQLite;
 	private tables: Tables;
 	private columnTypes: Array<string>;
-		
+	private columns: Array<Column> = [];
+	private currentColumn = {
+		name: "",
+		type: "",
+		default: ""
+	}	
+	
 	constructor(private injector: Injector) {
 		this.db = this.injector.get('database');
 		var column = new Column("test","int");
 		this.columnTypes = column.getTypes();
 		console.log(this.columnTypes);
 		this.tables = new Tables(this.db);
+	}
+	public addColumn() {
+		console.log(this.currentColumn);
+		this.columns.push(new Column(this.currentColumn.name, this.currentColumn.type));
+		console.log(this.columns);
+		this.resetCurrentColumn();
+	}
+	private resetCurrentColumn() {
+		this.currentColumn = {
+			name: "",
+			type: "",
+			default: "",
+		}
 	}
 }
